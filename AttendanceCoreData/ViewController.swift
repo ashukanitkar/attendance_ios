@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
-    var students: [String] = []
+    var students: [NSManagedObject] = []
     @IBOutlet weak var studentTableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,33 +21,40 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addStudent(_ sender: Any) {
-      let alert = UIAlertController(title: "New Name",
-                                    message: "Add a new name",
-                                    preferredStyle: .alert)
-      
-      let saveAction = UIAlertAction(title: "Save",
-                                     style: .default) {
+      let alert = UIAlertController(title: "New Student", message: "Add a new name", preferredStyle: .alert)
+      let saveAction = UIAlertAction(title: "Save", style: .default) {
         [unowned self] action in
-                                      
         guard let textField = alert.textFields?.first,
           let nameToSave = textField.text else {
             return
         }
-        
-        self.students.append(nameToSave)
+        self.save(name: nameToSave)
         self.studentTableView.reloadData()
       }
-      
-      let cancelAction = UIAlertAction(title: "Cancel",
-                                       style: .cancel)
-      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
       alert.addTextField()
-      
       alert.addAction(saveAction)
       alert.addAction(cancelAction)
-      
       present(alert, animated: true)
     }
+    
+    func save(name: String) {
+      guard let appDelegate =
+        UIApplication.shared.delegate as? AppDelegate else {
+        return
+      }
+      let managedContext = appDelegate.persistentContainer.viewContext
+      let entity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
+      let student = NSManagedObject(entity: entity, insertInto: managedContext)
+      student.setValue(name, forKeyPath: "name")
+      do {
+        try managedContext.save()
+        students.append(student)
+      } catch let error as NSError {
+        print("Could not save. \(error), \(error.userInfo)")
+      }
+    }
+
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,7 +63,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let student = students[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
+        if let cell = cell as? StudentCell {
+            cell.name.text = student.value(forKey: "name") as? String
+        }
         return cell
     }
     

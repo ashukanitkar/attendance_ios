@@ -16,6 +16,7 @@
 		69308E5A2405E7FB00C8AF4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69308E582405E7FB00C8AF4C /* LaunchScreen.storyboard */; };
 		69308E652405E7FC00C8AF4C /* AttendanceCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E642405E7FC00C8AF4C /* AttendanceCoreDataTests.swift */; };
 		69308E702405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E6F2405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift */; };
+		69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7D2405F3DC00C8AF4C /* StudentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		69308E6B2405E7FC00C8AF4C /* AttendanceCoreDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttendanceCoreDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69308E6F2405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCoreDataUITests.swift; sourceTree = "<group>"; };
 		69308E712405E7FC00C8AF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69308E7D2405F3DC00C8AF4C /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				69308E4A2405E7F500C8AF4C /* AppDelegate.swift */,
 				69308E4C2405E7F500C8AF4C /* SceneDelegate.swift */,
 				69308E4E2405E7F500C8AF4C /* ViewController.swift */,
+				69308E7D2405F3DC00C8AF4C /* StudentCell.swift */,
 				69308E502405E7F500C8AF4C /* Main.storyboard */,
 				69308E562405E7FB00C8AF4C /* Assets.xcassets */,
 				69308E582405E7FB00C8AF4C /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */,
 				69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */,
 				69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */,
 				69308E4B2405E7F500C8AF4C /* AppDelegate.swift in Sources */,
