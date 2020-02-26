@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCoreData()
         studentTableView.delegate = self
         studentTableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -53,6 +54,19 @@ class ViewController: UIViewController {
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
+    }
+    
+    func fetchCoreData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
+        do {
+          students = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 
 }
