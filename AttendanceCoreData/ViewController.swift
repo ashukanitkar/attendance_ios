@@ -71,6 +71,9 @@ class ViewController: UIViewController {
 
 }
 
+//Student (datesAttended, name) , fetches ALLL objects that are stored as the "student" entity
+//I want to fetch an array of Date Entities that match a person 
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count

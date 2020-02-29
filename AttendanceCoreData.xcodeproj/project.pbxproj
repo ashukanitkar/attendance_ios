@@ -17,6 +17,7 @@
 		69308E652405E7FC00C8AF4C /* AttendanceCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E642405E7FC00C8AF4C /* AttendanceCoreDataTests.swift */; };
 		69308E702405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E6F2405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift */; };
 		69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7D2405F3DC00C8AF4C /* StudentCell.swift */; };
+		69308E8024087BB000C8AF4C /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7F24087BB000C8AF4C /* Payments.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
