@@ -68,12 +68,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="19"/>
+            <point key="canvasLocation" x="1548" y="-474"/>
         </scene>
         <!--Students-->
         <scene sceneID="gtw-gg-ufH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A9v-U2-E5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VEf-L5-Y16" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Students" id="2J0-45-Hjp"/>
                     <toolbarItems/>
@@ -86,10 +85,11 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2mK-Bm-JeT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9v-U2-E5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="19"/>
+            <point key="canvasLocation" x="-661" y="-474"/>
         </scene>
-        <!--View Controller-->
+        <!--Attendance-->
         <scene sceneID="2FW-eE-5Ek">
             <objects>
                 <viewController id="a95-ZR-6Yd" sceneMemberID="viewController">
@@ -99,11 +99,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tk5-vB-g02"/>
                     </view>
-                    <navigationItem key="navigationItem" id="e69-8W-tzX"/>
+                    <navigationItem key="navigationItem" title="Attendance" id="e69-8W-tzX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpT-Si-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2807" y="501"/>
+            <point key="canvasLocation" x="1548" y="556"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DcV-tA-kV1">
@@ -111,6 +111,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Bf-js-la8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cmv-6w-KhW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -124,16 +125,71 @@
             </objects>
             <point key="canvasLocation" x="-1855" y="501"/>
         </scene>
-        <!--View Controller-->
+        <!--Payments-->
         <scene sceneID="OAh-2R-xVh">
             <objects>
-                <viewController id="pId-pI-b6M" sceneMemberID="viewController">
+                <viewController id="pId-pI-b6M" customClass="PaymentsViewController" customModule="AttendanceCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfc-Ib-jCd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PAYMENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chT-Cz-lUf">
-                                <rect key="frame" x="20" y="88" width="374" height="368"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Go7-NW-YwJ">
+                                <rect key="frame" x="0.0" y="70" width="414" height="744"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="studentCell" id="It3-8X-sJf" customClass="StudentCell" customModule="AttendanceCoreData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="It3-8X-sJf" id="wRB-0T-OeP">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6v-q0-krW">
+                                                    <rect key="frame" x="20" y="11" width="342" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="J6v-q0-krW" id="7NA-PZ-I7i"/>
+                                            <segue destination="c7p-yK-Bjz" kind="show" identifier="segueToStudentPayment" id="rZG-JD-bLV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0cp-xX-O6j"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Payments" id="VYt-OK-8W2"/>
+                    <connections>
+                        <outlet property="studentTableView" destination="Go7-NW-YwJ" id="6bM-wb-ebf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5lW-Hb-vaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="1965"/>
+        </scene>
+        <!--Payment Details View Controller-->
+        <scene sceneID="pa3-7C-NFg">
+            <objects>
+                <viewController id="c7p-yK-Bjz" customClass="PaymentDetailsViewController" customModule="AttendanceCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MIe-I3-e8f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MNr-Lx-tEr">
+                                <rect key="frame" x="96" y="189" width="224" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLc-Uv-zDj">
+                                <rect key="frame" x="96" y="121" width="224" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -141,18 +197,20 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="0cp-xX-O6j"/>
+                        <viewLayoutGuide key="safeArea" id="zBi-xm-oq3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VYt-OK-8W2"/>
+                    <navigationItem key="navigationItem" id="D3c-cg-EKC"/>
+                    <connections>
+                        <outlet property="studentName" destination="bLc-Uv-zDj" id="8So-eB-BXu"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5lW-Hb-vaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQ7-AP-9wv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937.68115942029" y="1022.5446428571428"/>
+            <point key="canvasLocation" x="3002.898550724638" y="1964.7321428571427"/>
         </scene>
         <!--Attendance-->
         <scene sceneID="a8k-Lx-wfr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b6g-VM-OIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XcQ-CO-bPR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Attendance" id="Lxw-Sa-408"/>
                     <toolbarItems/>
@@ -165,8 +223,9 @@
                         <segue destination="a95-ZR-6Yd" kind="relationship" relationship="rootViewController" id="pO9-c0-QZe"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6g-VM-OIT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="501"/>
+            <point key="canvasLocation" x="12" y="501"/>
         </scene>
         <!--Payment-->
         <scene sceneID="hyK-Sv-n6b">
@@ -185,7 +244,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2g-cJ-WXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281.15942028985512" y="1022.5446428571428"/>
+            <point key="canvasLocation" x="-662" y="1965"/>
         </scene>
     </scenes>
 </document>

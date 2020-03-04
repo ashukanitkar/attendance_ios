@@ -17,7 +17,8 @@
 		69308E652405E7FC00C8AF4C /* AttendanceCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E642405E7FC00C8AF4C /* AttendanceCoreDataTests.swift */; };
 		69308E702405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E6F2405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift */; };
 		69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7D2405F3DC00C8AF4C /* StudentCell.swift */; };
-		69308E8024087BB000C8AF4C /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7F24087BB000C8AF4C /* Payments.swift */; };
+		69308E852409F76900C8AF4C /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E842409F76900C8AF4C /* PaymentsViewController.swift */; };
+		69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		69308E6F2405E7FC00C8AF4C /* AttendanceCoreDataUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCoreDataUITests.swift; sourceTree = "<group>"; };
 		69308E712405E7FC00C8AF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69308E7D2405F3DC00C8AF4C /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
+		69308E842409F76900C8AF4C /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,9 @@
 		69308E492405E7F500C8AF4C /* AttendanceCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				69308E832409F72800C8AF4C /* Attendance */,
+				69308E812409F70200C8AF4C /* Payments */,
+				69308E822409F70D00C8AF4C /* Roster */,
 				69308E4A2405E7F500C8AF4C /* AppDelegate.swift */,
 				69308E4C2405E7F500C8AF4C /* SceneDelegate.swift */,
 				69308E4E2405E7F500C8AF4C /* ViewController.swift */,
@@ -133,6 +139,29 @@
 				69308E712405E7FC00C8AF4C /* Info.plist */,
 			);
 			path = AttendanceCoreDataUITests;
+			sourceTree = "<group>";
+		};
+		69308E812409F70200C8AF4C /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				69308E842409F76900C8AF4C /* PaymentsViewController.swift */,
+				69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */,
+			);
+			path = Payments;
+			sourceTree = "<group>";
+		};
+		69308E822409F70D00C8AF4C /* Roster */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Roster;
+			sourceTree = "<group>";
+		};
+		69308E832409F72800C8AF4C /* Attendance */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Attendance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +295,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */,
 				69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */,
 				69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */,
 				69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */,
+				69308E852409F76900C8AF4C /* PaymentsViewController.swift in Sources */,
 				69308E4B2405E7F500C8AF4C /* AppDelegate.swift in Sources */,
 				69308E4D2405E7F500C8AF4C /* SceneDelegate.swift in Sources */,
 			);
