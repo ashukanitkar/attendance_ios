@@ -88,18 +88,55 @@
         <!--Attendance-->
         <scene sceneID="2FW-eE-5Ek">
             <objects>
-                <viewController id="a95-ZR-6Yd" sceneMemberID="viewController">
+                <viewController id="a95-ZR-6Yd" customClass="AttendanceViewController" customModule="AttendanceCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MMV-fv-2Pn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C5u-uY-HLj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="studentCell" id="IZz-UA-qBN" customClass="StudentCell" customModule="AttendanceCoreData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IZz-UA-qBN" id="xRM-dq-0a9">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEA-Pz-YJx">
+                                                    <rect key="frame" x="20" y="11" width="342" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="OEA-Pz-YJx" id="fXh-ie-pKs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C5u-uY-HLj" firstAttribute="bottom" secondItem="tk5-vB-g02" secondAttribute="bottom" id="5DH-8r-rVU"/>
+                            <constraint firstItem="C5u-uY-HLj" firstAttribute="leading" secondItem="tk5-vB-g02" secondAttribute="leading" id="Dcx-4n-BZI"/>
+                            <constraint firstItem="C5u-uY-HLj" firstAttribute="trailing" secondItem="tk5-vB-g02" secondAttribute="trailing" id="nF6-vN-pLl"/>
+                            <constraint firstItem="C5u-uY-HLj" firstAttribute="top" secondItem="tk5-vB-g02" secondAttribute="top" id="y9z-RY-h77"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tk5-vB-g02"/>
                     </view>
                     <navigationItem key="navigationItem" title="Attendance" id="e69-8W-tzX"/>
+                    <connections>
+                        <outlet property="attendanceTableView" destination="C5u-uY-HLj" id="nzI-1m-Vac"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpT-Si-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="556"/>
+            <point key="canvasLocation" x="1547.8260869565217" y="555.80357142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DcV-tA-kV1">
