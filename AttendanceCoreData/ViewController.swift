@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         studentTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchCoreData()
+    }
 
     @IBAction func addStudent(_ sender: Any) {
       let alert = UIAlertController(title: "New Student", message: "Add a new name", preferredStyle: .alert)
@@ -44,9 +48,14 @@ class ViewController: UIViewController {
         UIApplication.shared.delegate as? AppDelegate else {
         return
       }
+      let payments: [Float] = [5.23, 1.27, 20.76]
+        
+        
       let managedContext = appDelegate.persistentContainer.viewContext
       let entity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
       let student = NSManagedObject(entity: entity, insertInto: managedContext)
+      let mPayments = Payments(payments: payments)
+        student.setValue(mPayments, forKey: "payments")
       student.setValue(name, forKeyPath: "name")
       do {
         try managedContext.save()
@@ -54,8 +63,9 @@ class ViewController: UIViewController {
       } catch let error as NSError {
         print("Could not save. \(error), \(error.userInfo)")
       }
+        
     }
-    
+
     func fetchCoreData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -64,6 +74,9 @@ class ViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
         do {
           students = try managedContext.fetch(fetchRequest)
+            for student in students {
+                let mPayments = student.value(forKey: "payments") as! Payments
+            }
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -83,7 +96,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let student = students[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
         if let cell = cell as? StudentCell {
-            cell.name.text = student.value(forKey: "name") as? String
+            let name = student.value(forKey: "name") as? String
+            cell.name.text = name
         }
         return cell
     }

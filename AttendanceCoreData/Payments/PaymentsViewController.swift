@@ -18,7 +18,10 @@ class PaymentsViewController: UIViewController {
         studentTableView.dataSource = self
         fetchCoreData()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchCoreData()
+        studentTableView.reloadData()
+    }
     func fetchCoreData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
