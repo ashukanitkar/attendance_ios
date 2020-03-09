@@ -29,6 +29,35 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
+    @IBAction func savePayment(_ sender: Any) {
+        let paymentAmountText: String = paymentAmount.text!
+        let paymentAmountFloat = Float(paymentAmountText)
+         if let paymentAmountFloat = paymentAmountFloat, let payments = student?.value(forKey: "payments") as? Payments {
+            payments.payments.append(paymentAmountFloat)
+            savePaymentToCoreData(payments: payments.payments)
+        }
+        paymentAmount.text = ""
+        paymentHistoryTable.reloadData()
+    }
+    
+    func savePaymentToCoreData(payments: [Float]) {
+        let updatedPayments = Payments(payments: payments)
+        if let student = student {
+            student.setValue(updatedPayments, forKey: "payments")
+        }
+        guard let appDelegate =
+          UIApplication.shared.delegate as? AppDelegate else {
+          return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+          print("Could not save payment. \(error), \(error.userInfo)")
+        }
+            
+    }
+    @IBOutlet weak var paymentAmount: UITextField!
     @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var paymentHistoryTable: UITableView!
     var student: NSObject?

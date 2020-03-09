@@ -219,7 +219,7 @@
                                 <rect key="frame" x="96" y="189" width="224" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLc-Uv-zDj">
                                 <rect key="frame" x="96" y="121" width="224" height="21"/>
@@ -255,12 +255,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH0-Ho-lAb">
+                                <rect key="frame" x="190" y="247" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePayment:" destination="c7p-yK-Bjz" eventType="touchUpInside" id="Vf3-wk-Qxr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zBi-xm-oq3"/>
                     </view>
                     <navigationItem key="navigationItem" id="D3c-cg-EKC"/>
                     <connections>
+                        <outlet property="paymentAmount" destination="MNr-Lx-tEr" id="MyW-Yu-O4K"/>
                         <outlet property="paymentHistoryTable" destination="qnR-N2-jNO" id="SmD-0w-5Wm"/>
                         <outlet property="studentName" destination="bLc-Uv-zDj" id="8So-eB-BXu"/>
                     </connections>
