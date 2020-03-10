@@ -34,11 +34,18 @@ class AttendanceViewController: UIViewController {
         do {
           students = try managedContext.fetch(fetchRequest)
             for student in students {
-                let mPayments = student.value(forKey: "payments") as! Payments
+                let mPayments = student.value(forKey: "payments") as! [Float]
             }
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let attendanceDetailVC = segue.destination as? AttendanceDetailViewController, let index = attendanceTableView.indexPathForSelectedRow?.row else {
+            return
+        }
+        attendanceDetailVC.student = students[index]
     }
 }
 

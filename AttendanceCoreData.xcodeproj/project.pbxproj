@@ -22,6 +22,7 @@
 		69308E8C2411BE9900C8AF4C /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E8B2411BE9900C8AF4C /* Payments.swift */; };
 		6934FE0E2414AF95006ADB51 /* PaymentHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */; };
 		6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */; };
+		699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B534524184A8800A06705 /* AttendanceDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		69308E8B2411BE9900C8AF4C /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryCell.swift; sourceTree = "<group>"; };
 		6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		699B534524184A8800A06705 /* AttendanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */,
+				699B534524184A8800A06705 /* AttendanceDetailViewController.swift */,
 			);
 			path = Attendance;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */,
 				6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */,
 				69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */,
+				699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */,
 				69308E8C2411BE9900C8AF4C /* Payments.swift in Sources */,
 				69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */,
 				69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */,

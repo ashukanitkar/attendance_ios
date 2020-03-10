@@ -115,6 +115,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="name" destination="OEA-Pz-YJx" id="fXh-ie-pKs"/>
+                                            <segue destination="hAD-Dk-c8G" kind="show" identifier="segueToStudentAttendance" id="82F-Ua-XO2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,6 +138,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpT-Si-iXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1547.8260869565217" y="555.80357142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vrN-4F-SCv">
+            <objects>
+                <viewController id="hAD-Dk-c8G" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ea1-Ti-cET">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tHJ-gt-38F"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VBv-OL-soy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tiR-VO-xXs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2606" y="557"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DcV-tA-kV1">

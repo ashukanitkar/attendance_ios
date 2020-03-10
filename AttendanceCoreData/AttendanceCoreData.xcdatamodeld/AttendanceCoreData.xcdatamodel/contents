@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="payments" optional="YES" attributeType="Transformable" customClassName="Payments"/>
+        <attribute name="payments" optional="YES" attributeType="Transformable"/>
     </entity>
     <elements>
         <element name="Student" positionX="-63" positionY="-18" width="128" height="73"/>

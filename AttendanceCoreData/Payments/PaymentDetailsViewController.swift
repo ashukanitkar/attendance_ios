@@ -10,8 +10,8 @@ import UIKit
 
 class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let payments = student?.value(forKey: "payments") as? Payments {
-            return payments.payments.count
+        if let payments = student?.value(forKey: "payments") as? [Float] {
+            return payments.count
         }
         return 0
     }
@@ -20,9 +20,9 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "paymentHistoryCell", for: indexPath)
         if let student = student {
             if let cell = cell as? PaymentHistoryCell {
-                let payments = student.value(forKey: "payments") as? Payments
+                let payments = student.value(forKey: "payments") as? [Float]
                 if let payments = payments {
-                    cell.paymentAmountLabel.text = String(payments.payments[indexPath.row])
+                    cell.paymentAmountLabel.text = String(payments[indexPath.row])
                 }
             }
         }
@@ -32,18 +32,17 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func savePayment(_ sender: Any) {
         let paymentAmountText: String = paymentAmount.text!
         let paymentAmountFloat = Float(paymentAmountText)
-         if let paymentAmountFloat = paymentAmountFloat, let payments = student?.value(forKey: "payments") as? Payments {
-            payments.payments.append(paymentAmountFloat)
-            savePaymentToCoreData(payments: payments.payments)
+         if let paymentAmountFloat = paymentAmountFloat, var payments = student?.value(forKey: "payments") as? [Float] {
+            payments.append(paymentAmountFloat)
+            savePaymentToCoreData(payments: payments)
         }
         paymentAmount.text = ""
         paymentHistoryTable.reloadData()
     }
     
     func savePaymentToCoreData(payments: [Float]) {
-        let updatedPayments = Payments(payments: payments)
         if let student = student {
-            student.setValue(updatedPayments, forKey: "payments")
+            student.setValue(payments, forKey: "payments")
         }
         guard let appDelegate =
           UIApplication.shared.delegate as? AppDelegate else {

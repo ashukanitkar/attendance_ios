@@ -54,8 +54,7 @@ class ViewController: UIViewController {
       let managedContext = appDelegate.persistentContainer.viewContext
       let entity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
       let student = NSManagedObject(entity: entity, insertInto: managedContext)
-      let mPayments = Payments(payments: payments)
-        student.setValue(mPayments, forKey: "payments")
+        student.setValue(payments, forKey: "payments")
       student.setValue(name, forKeyPath: "name")
       do {
         try managedContext.save()
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
         do {
           students = try managedContext.fetch(fetchRequest)
             for student in students {
-                let mPayments = student.value(forKey: "payments") as! Payments
+                let mPayments = student.value(forKey: "payments") as! [Float]
             }
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
