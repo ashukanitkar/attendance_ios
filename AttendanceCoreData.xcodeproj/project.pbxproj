@@ -19,10 +19,10 @@
 		69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E7D2405F3DC00C8AF4C /* StudentCell.swift */; };
 		69308E852409F76900C8AF4C /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E842409F76900C8AF4C /* PaymentsViewController.swift */; };
 		69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */; };
-		69308E8C2411BE9900C8AF4C /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E8B2411BE9900C8AF4C /* Payments.swift */; };
 		6934FE0E2414AF95006ADB51 /* PaymentHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */; };
 		6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */; };
 		699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B534524184A8800A06705 /* AttendanceDetailViewController.swift */; };
+		699B53482419363200A06705 /* AttendanceHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B53472419363200A06705 /* AttendanceHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +61,10 @@
 		69308E7D2405F3DC00C8AF4C /* StudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCell.swift; sourceTree = "<group>"; };
 		69308E842409F76900C8AF4C /* PaymentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
 		69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
-		69308E8B2411BE9900C8AF4C /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryCell.swift; sourceTree = "<group>"; };
 		6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		699B534524184A8800A06705 /* AttendanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceDetailViewController.swift; sourceTree = "<group>"; };
+		699B53472419363200A06705 /* AttendanceHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +120,12 @@
 				69308E822409F70D00C8AF4C /* Roster */,
 				69308E4A2405E7F500C8AF4C /* AppDelegate.swift */,
 				69308E4C2405E7F500C8AF4C /* SceneDelegate.swift */,
-				69308E4E2405E7F500C8AF4C /* ViewController.swift */,
 				69308E7D2405F3DC00C8AF4C /* StudentCell.swift */,
 				69308E502405E7F500C8AF4C /* Main.storyboard */,
 				69308E562405E7FB00C8AF4C /* Assets.xcassets */,
 				69308E582405E7FB00C8AF4C /* LaunchScreen.storyboard */,
 				69308E5B2405E7FB00C8AF4C /* Info.plist */,
 				69308E532405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld */,
-				69308E8B2411BE9900C8AF4C /* Payments.swift */,
 			);
 			path = AttendanceCoreData;
 			sourceTree = "<group>";
@@ -163,6 +161,7 @@
 		69308E822409F70D00C8AF4C /* Roster */ = {
 			isa = PBXGroup;
 			children = (
+				69308E4E2405E7F500C8AF4C /* ViewController.swift */,
 			);
 			path = Roster;
 			sourceTree = "<group>";
@@ -172,6 +171,7 @@
 			children = (
 				6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */,
 				699B534524184A8800A06705 /* AttendanceDetailViewController.swift */,
+				699B53472419363200A06705 /* AttendanceHistoryCell.swift */,
 			);
 			path = Attendance;
 			sourceTree = "<group>";
@@ -309,9 +309,9 @@
 			files = (
 				69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */,
 				6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */,
+				699B53482419363200A06705 /* AttendanceHistoryCell.swift in Sources */,
 				69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */,
 				699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */,
-				69308E8C2411BE9900C8AF4C /* Payments.swift in Sources */,
 				69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */,
 				69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */,
 				6934FE0E2414AF95006ADB51 /* PaymentHistoryCell.swift in Sources */,

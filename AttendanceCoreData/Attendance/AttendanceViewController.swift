@@ -33,9 +33,9 @@ class AttendanceViewController: UIViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
         do {
           students = try managedContext.fetch(fetchRequest)
-            for student in students {
-                let mPayments = student.value(forKey: "payments") as! [Float]
-            }
+//            for student in students {
+//                let mPayments = student.value(forKey: "payments") as! [Float]
+//            }
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }

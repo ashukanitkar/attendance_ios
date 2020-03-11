@@ -49,6 +49,7 @@ class ViewController: UIViewController {
         return
       }
       let payments: [Float] = [5.23, 1.27, 20.76]
+        let datesAttended: [Date] = [Date()]
         
         
       let managedContext = appDelegate.persistentContainer.viewContext
@@ -56,6 +57,7 @@ class ViewController: UIViewController {
       let student = NSManagedObject(entity: entity, insertInto: managedContext)
         student.setValue(payments, forKey: "payments")
       student.setValue(name, forKeyPath: "name")
+        student.setValue(datesAttended, forKeyPath: "datesAttended")
       do {
         try managedContext.save()
         students.append(student)
