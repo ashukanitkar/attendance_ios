@@ -37,6 +37,7 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
             savePaymentToCoreData(payments: payments)
         }
         paymentAmount.text = ""
+        self.view.endEditing(true)
         paymentHistoryTable.reloadData()
     }
     
