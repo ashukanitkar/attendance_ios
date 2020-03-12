@@ -70,7 +70,7 @@
         <scene sceneID="gtw-gg-ufH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VEf-L5-Y16" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Students" id="2J0-45-Hjp"/>
+                    <tabBarItem key="tabBarItem" title="Students" image="person.3.fill" catalog="system" id="2J0-45-Hjp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NYx-Dm-xrL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -326,9 +326,12 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH0-Ho-lAb">
-                                <rect key="frame" x="190" y="247" width="34" height="30"/>
+                                <rect key="frame" x="154" y="252" width="102" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Save" backgroundImage="app.fill" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="savePayment:" destination="c7p-yK-Bjz" eventType="touchUpInside" id="Vf3-wk-Qxr"/>
                                 </connections>
@@ -352,7 +355,7 @@
         <scene sceneID="a8k-Lx-wfr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XcQ-CO-bPR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Attendance" id="Lxw-Sa-408"/>
+                    <tabBarItem key="tabBarItem" title="Attendance" image="checkmark.rectangle.fill" catalog="system" id="Lxw-Sa-408"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fe0-Qq-As0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -371,7 +374,7 @@
         <scene sceneID="hyK-Sv-n6b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w3f-vA-6aT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Payment" id="dut-St-BaI"/>
+                    <tabBarItem key="tabBarItem" title="Payment" image="dollarsign.square.fill" catalog="system" id="dut-St-BaI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0la-Ke-K6A">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -387,4 +390,10 @@
             <point key="canvasLocation" x="-662" y="1965"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="app.fill" catalog="system" width="64" height="56"/>
+        <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
+        <image name="dollarsign.square.fill" catalog="system" width="64" height="56"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
+    </resources>
 </document>

@@ -22,7 +22,8 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
             if let cell = cell as? PaymentHistoryCell {
                 let payments = student.value(forKey: "payments") as? [Float]
                 if let payments = payments {
-                    cell.paymentAmountLabel.text = String(payments[indexPath.row])
+                    let amount = String(payments[indexPath.row])
+                    cell.paymentAmountLabel.text = "$" + amount
                 }
             }
         }
