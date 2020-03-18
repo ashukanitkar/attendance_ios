@@ -17,10 +17,10 @@ class AttendanceDetailViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         let date:Date = datePicker.date
         saveDateToCoreData(date: date)
+        attendanceHistoryTable.reloadData()
     }
     
     func saveDateToCoreData(date: Date) {
-        print(student)
         if var datesAttended = student?.value(forKey: "datesAttended") as? [Date] {
              if let student = student {
                 if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
@@ -41,6 +41,7 @@ class AttendanceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.maximumDate = Date()
         studentName.text = student?.value(forKey: "name") as? String
         attendanceHistoryTable.delegate = self
         attendanceHistoryTable.dataSource = self

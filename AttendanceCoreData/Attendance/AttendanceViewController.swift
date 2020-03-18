@@ -23,6 +23,7 @@ class AttendanceViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewDidLoad()
+        attendanceTableView.reloadData()
     }
     
     func fetchCoreData() {
@@ -47,6 +48,21 @@ class AttendanceViewController: UIViewController {
         }
         attendanceDetailVC.student = students[index]
     }
+    
+    func saveAttendance(for student: NSObject) {
+        if var datesAttended = student.value(forKey: "datesAttended") as? [Date] {
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                datesAttended.append(Date())
+                student.setValue(datesAttended, forKey: "datesAttended")
+                let managedContext = appDelegate.persistentContainer.viewContext
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                  print("Could not save today's attendance. \(error), \(error.userInfo)")
+                }
+            }
+        }
+    }
 }
 
 extension AttendanceViewController: UITableViewDataSource, UITableViewDelegate {
@@ -62,6 +78,18 @@ extension AttendanceViewController: UITableViewDataSource, UITableViewDelegate {
             cell.name.text = name
         }
         return cell
+    }
+    
+     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let contextItem = UIContextualAction(style: .normal, title: "Mark As Present") {  (action, view, completionHandler) in
+            let student = self.students[indexPath.row]
+            print(student)
+            self.saveAttendance(for: student)
+            completionHandler(true)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+
+        return swipeActions
     }
     
     
