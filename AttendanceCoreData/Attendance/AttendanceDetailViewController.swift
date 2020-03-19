@@ -11,7 +11,6 @@ import CoreData
 
 class AttendanceDetailViewController: UIViewController {
     var student: NSObject?
-    @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var attendanceHistoryTable: UITableView!
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -41,8 +40,8 @@ class AttendanceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = student?.value(forKey: "name") as? String
         datePicker.maximumDate = Date()
-        studentName.text = student?.value(forKey: "name") as? String
         attendanceHistoryTable.delegate = self
         attendanceHistoryTable.dataSource = self
     }

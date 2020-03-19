@@ -59,22 +59,20 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
             
     }
     @IBOutlet weak var paymentAmount: UITextField!
-    @IBOutlet weak var studentName: UILabel!
     @IBOutlet weak var paymentHistoryTable: UITableView!
-    var student: NSObject?
+    var student: NSObject? //use the studnet class
     override func viewDidLoad() {
         super.viewDidLoad()
         paymentHistoryTable.delegate = self
         paymentHistoryTable.dataSource = self
-        studentName.text = student?.value(forKey: "name") as? String
+        navigationItem.title = student?.value(forKey: "name") as? String
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        paymentHistoryTable.delegate = self
-        paymentHistoryTable.dataSource = self
-        studentName.text = student?.value(forKey: "name") as? String
+        viewDidLoad()
+        paymentHistoryTable.reloadData()
     }
     
     /*

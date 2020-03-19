@@ -48,16 +48,17 @@ class ViewController: UIViewController {
         UIApplication.shared.delegate as? AppDelegate else {
         return
       }
-      let payments: [Float] = [5.23, 1.27, 20.76]
-        let datesAttended: [Date] = [Date()]
+        //let payments: [Float] = [5.23, 1.27, 20.76]
+        //let datesAttended: [Date] = [Date()]
         
         
       let managedContext = appDelegate.persistentContainer.viewContext
       let entity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
-      let student = NSManagedObject(entity: entity, insertInto: managedContext)
-        student.setValue(payments, forKey: "payments")
-      student.setValue(name, forKeyPath: "name")
-        student.setValue(datesAttended, forKeyPath: "datesAttended")
+      //let student = NSManagedObject(entity: entity, insertInto: managedContext)
+        let student = Student(entity: entity, insertInto: managedContext)
+        //student.setValue(payments, forKey: "payments")
+        student.name = name
+        //student.setValue(datesAttended, forKeyPath: "datesAttended")
       do {
         try managedContext.save()
         students.append(student)
