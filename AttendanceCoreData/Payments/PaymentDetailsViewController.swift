@@ -9,25 +9,20 @@
 import UIKit
 
 class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let payments = student?.value(forKey: "payments") as? [Float] {
-            return payments.count
-        }
-        return 0
-    }
+    @IBOutlet weak var paymentAmount: UITextField!
+    @IBOutlet weak var paymentHistoryTable: UITableView!
+    var student: NSObject?
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "paymentHistoryCell", for: indexPath)
-        if let student = student {
-            if let cell = cell as? PaymentHistoryCell {
-                let payments = student.value(forKey: "payments") as? [Float]
-                if let payments = payments {
-                    let amount = String(payments[indexPath.row])
-                    cell.paymentAmountLabel.text = "$" + amount
-                }
-            }
-        }
-        return cell
+    override func viewDidLoad() {
+       super.viewDidLoad()
+       paymentHistoryTable.delegate = self
+       paymentHistoryTable.dataSource = self
+       navigationItem.title = student?.value(forKey: "name") as? String
+    }
+       
+    override func viewWillAppear(_ animated: Bool) {
+       viewDidLoad()
+       paymentHistoryTable.reloadData()
     }
     
     @IBAction func savePayment(_ sender: Any) {
@@ -58,31 +53,26 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
         }
             
     }
-    @IBOutlet weak var paymentAmount: UITextField!
-    @IBOutlet weak var paymentHistoryTable: UITableView!
-    var student: NSObject? //use the studnet class
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        paymentHistoryTable.delegate = self
-        paymentHistoryTable.dataSource = self
-        navigationItem.title = student?.value(forKey: "name") as? String
-
-        // Do any additional setup after loading the view.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let payments = student?.value(forKey: "payments") as? [Float] {
+            return payments.count
+        }
+        return 0
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        viewDidLoad()
-        paymentHistoryTable.reloadData()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "paymentHistoryCell", for: indexPath)
+        if let student = student {
+            if let cell = cell as? PaymentHistoryCell {
+                let payments = student.value(forKey: "payments") as? [Float]
+                if let payments = payments {
+                    let amount = String(payments[indexPath.row])
+                    cell.paymentAmountLabel.text = "$" + amount
+                }
+            }
+        }
+        return cell
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

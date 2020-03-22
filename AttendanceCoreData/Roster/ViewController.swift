@@ -10,19 +10,21 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-    var students: [NSManagedObject] = []
+    var students: [Student] = []
     @IBOutlet weak var studentTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCoreData()
+        //fetchCoreData()
+        students = CoreDataManager.shared.students ?? []
         studentTableView.delegate = self
         studentTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchCoreData()
+        //fetchCoreData()
+        viewDidLoad()
     }
 
     @IBAction func addStudent(_ sender: Any) {
@@ -33,7 +35,8 @@ class ViewController: UIViewController {
           let nameToSave = textField.text else {
             return
         }
-        self.save(name: nameToSave)
+        CoreDataManager.shared.addStudent(name: nameToSave)
+        self.students = CoreDataManager.shared.students ?? []
         self.studentTableView.reloadData()
       }
       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -42,48 +45,6 @@ class ViewController: UIViewController {
       alert.addAction(cancelAction)
       present(alert, animated: true)
     }
-    
-    func save(name: String) {
-      guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
-        //let payments: [Float] = [5.23, 1.27, 20.76]
-        //let datesAttended: [Date] = [Date()]
-        
-        
-      let managedContext = appDelegate.persistentContainer.viewContext
-      let entity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext)!
-      //let student = NSManagedObject(entity: entity, insertInto: managedContext)
-        let student = Student(entity: entity, insertInto: managedContext)
-        //student.setValue(payments, forKey: "payments")
-        student.name = name
-        //student.setValue(datesAttended, forKeyPath: "datesAttended")
-      do {
-        try managedContext.save()
-        students.append(student)
-      } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
-      }
-        
-    }
-
-    func fetchCoreData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
-        do {
-          students = try managedContext.fetch(fetchRequest)
-            for student in students {
-                let mPayments = student.value(forKey: "payments") as! [Float]
-            }
-        } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
-
 }
 
 //Student (datesAttended, name) , fetches ALLL objects that are stored as the "student" entity

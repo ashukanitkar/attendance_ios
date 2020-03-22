@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691007022428254C009CBC51 /* AttendanceCoreData.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 69308E532405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld */; };
 		69308E4B2405E7F500C8AF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E4A2405E7F500C8AF4C /* AppDelegate.swift */; };
 		69308E4D2405E7F500C8AF4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E4C2405E7F500C8AF4C /* SceneDelegate.swift */; };
 		69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E4E2405E7F500C8AF4C /* ViewController.swift */; };
 		69308E522405E7F500C8AF4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69308E502405E7F500C8AF4C /* Main.storyboard */; };
-		69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69308E532405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld */; };
 		69308E572405E7FB00C8AF4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69308E562405E7FB00C8AF4C /* Assets.xcassets */; };
 		69308E5A2405E7FB00C8AF4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69308E582405E7FB00C8AF4C /* LaunchScreen.storyboard */; };
 		69308E652405E7FC00C8AF4C /* AttendanceCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E642405E7FC00C8AF4C /* AttendanceCoreDataTests.swift */; };
@@ -21,8 +21,11 @@
 		69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */; };
 		6934FE0E2414AF95006ADB51 /* PaymentHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */; };
 		6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */; };
+		69663A66242820AF007102C7 /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69663A64242820AF007102C7 /* Student+CoreDataClass.swift */; };
+		69663A67242820AF007102C7 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69663A65242820AF007102C7 /* Student+CoreDataProperties.swift */; };
 		699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B534524184A8800A06705 /* AttendanceDetailViewController.swift */; };
 		699B53482419363200A06705 /* AttendanceHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B53472419363200A06705 /* AttendanceHistoryCell.swift */; };
+		699B534A242413BF00A06705 /* coredatamanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699B5349242413BE00A06705 /* coredatamanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +66,11 @@
 		69308E892410485100C8AF4C /* PaymentDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDetailsViewController.swift; sourceTree = "<group>"; };
 		6934FE0D2414AF95006ADB51 /* PaymentHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHistoryCell.swift; sourceTree = "<group>"; };
 		6934FE0F24155EB9006ADB51 /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		69663A64242820AF007102C7 /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69663A65242820AF007102C7 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		699B534524184A8800A06705 /* AttendanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceDetailViewController.swift; sourceTree = "<group>"; };
 		699B53472419363200A06705 /* AttendanceHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceHistoryCell.swift; sourceTree = "<group>"; };
+		699B5349242413BE00A06705 /* coredatamanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coredatamanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 		69308E3E2405E7F500C8AF4C = {
 			isa = PBXGroup;
 			children = (
+				69663A64242820AF007102C7 /* Student+CoreDataClass.swift */,
+				69663A65242820AF007102C7 /* Student+CoreDataProperties.swift */,
 				69308E492405E7F500C8AF4C /* AttendanceCoreData */,
 				69308E632405E7FC00C8AF4C /* AttendanceCoreDataTests */,
 				69308E6E2405E7FC00C8AF4C /* AttendanceCoreDataUITests */,
@@ -126,6 +134,7 @@
 				69308E582405E7FB00C8AF4C /* LaunchScreen.storyboard */,
 				69308E5B2405E7FB00C8AF4C /* Info.plist */,
 				69308E532405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld */,
+				699B5349242413BE00A06705 /* coredatamanager.swift */,
 			);
 			path = AttendanceCoreData;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691007022428254C009CBC51 /* AttendanceCoreData.xcdatamodeld in Resources */,
 				69308E5A2405E7FB00C8AF4C /* LaunchScreen.storyboard in Resources */,
 				69308E572405E7FB00C8AF4C /* Assets.xcassets in Resources */,
 				69308E522405E7F500C8AF4C /* Main.storyboard in Resources */,
@@ -309,11 +319,13 @@
 			files = (
 				69308E8A2410485100C8AF4C /* PaymentDetailsViewController.swift in Sources */,
 				6934FE1024155EB9006ADB51 /* AttendanceViewController.swift in Sources */,
+				699B534A242413BF00A06705 /* coredatamanager.swift in Sources */,
+				69663A66242820AF007102C7 /* Student+CoreDataClass.swift in Sources */,
 				699B53482419363200A06705 /* AttendanceHistoryCell.swift in Sources */,
 				69308E7E2405F3DC00C8AF4C /* StudentCell.swift in Sources */,
+				69663A67242820AF007102C7 /* Student+CoreDataProperties.swift in Sources */,
 				699B534624184A8800A06705 /* AttendanceDetailViewController.swift in Sources */,
 				69308E4F2405E7F500C8AF4C /* ViewController.swift in Sources */,
-				69308E552405E7F500C8AF4C /* AttendanceCoreData.xcdatamodeld in Sources */,
 				6934FE0E2414AF95006ADB51 /* PaymentHistoryCell.swift in Sources */,
 				69308E852409F76900C8AF4C /* PaymentsViewController.swift in Sources */,
 				69308E4B2405E7F500C8AF4C /* AppDelegate.swift in Sources */,
