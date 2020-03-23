@@ -11,7 +11,7 @@ import CoreData
 
 class PaymentsViewController: UIViewController {
     @IBOutlet weak var studentTableView: UITableView!
-    var students: [NSManagedObject] = []
+    var students: [Student] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         studentTableView.delegate = self
@@ -29,7 +29,7 @@ class PaymentsViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
         do {
-          students = try managedContext.fetch(fetchRequest)
+            students = try managedContext.fetch(fetchRequest) as! [Student]
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }

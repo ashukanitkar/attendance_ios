@@ -38,8 +38,19 @@ class CoreDataManager {
             }
     }
     
-    func updatePayment(for student: Student) {
-        print("hi")
+    func updatePayment(for student: Student, amount: Float) {
+        guard let managedContext = managedContext else {
+            return print("could not save, no managed context")
+        }
+        let existingPayments = student.payments ?? []
+        var updatedPayments = existingPayments
+        updatedPayments.append(amount)
+        student.payments = updatedPayments
+        do {
+        try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
     }
     
     func save() {

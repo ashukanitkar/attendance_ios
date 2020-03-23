@@ -11,7 +11,7 @@ import UIKit
 class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var paymentAmount: UITextField!
     @IBOutlet weak var paymentHistoryTable: UITableView!
-    var student: NSObject?
+    var student: Student?
     
     override func viewDidLoad() {
        super.viewDidLoad()
@@ -28,9 +28,10 @@ class PaymentDetailsViewController: UIViewController, UITableViewDelegate, UITab
     @IBAction func savePayment(_ sender: Any) {
         let paymentAmountText: String = paymentAmount.text!
         let paymentAmountFloat = Float(paymentAmountText)
-         if let paymentAmountFloat = paymentAmountFloat, var payments = student?.value(forKey: "payments") as? [Float] {
-            payments.append(paymentAmountFloat)
-            savePaymentToCoreData(payments: payments)
+         if let paymentAmountFloat = paymentAmountFloat, let student = student {
+            CoreDataManager.shared.updatePayment(for: student, amount: paymentAmountFloat)
+            //payments.append(paymentAmountFloat)
+            //savePaymentToCoreData(payments: payments)
         }
         paymentAmount.text = ""
         self.view.endEditing(true)
