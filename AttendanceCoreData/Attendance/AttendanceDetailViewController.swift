@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class AttendanceDetailViewController: UIViewController {
-    var student: NSObject?
+    var student: Student?
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var attendanceHistoryTable: UITableView!
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -19,31 +19,29 @@ class AttendanceDetailViewController: UIViewController {
         attendanceHistoryTable.reloadData()
     }
     
-    func saveDateToCoreData(date: Date) {
-        if var datesAttended = student?.value(forKey: "datesAttended") as? [Date] {
-             if let student = student {
-                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                    datesAttended.append(date)
-                    student.setValue(datesAttended, forKey: "datesAttended")
-                    let managedContext = appDelegate.persistentContainer.viewContext
-                    do {
-                        try managedContext.save()
-                    } catch let error as NSError {
-                      print("Could not save date attended. \(error), \(error.userInfo)")
-                    }
-                }
-            }
-        }
-            
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = student?.value(forKey: "name") as? String
         datePicker.maximumDate = Date()
         attendanceHistoryTable.delegate = self
         attendanceHistoryTable.dataSource = self
+    }
+    
+    func saveDateToCoreData(date: Date) {
+        if let student = student {
+            CoreDataManager.shared.updateAttendance(for: student, date: date)
+        }
+    }
+    
+    func dateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+        let myString = formatter.string(from: date) // string purpose I add here
+        let yourDate = formatter.date(from: myString)
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let myStringafd = formatter.string(from: yourDate!)
+        return myStringafd
     }
 }
 
@@ -67,15 +65,4 @@ extension AttendanceDetailViewController: UITableViewDelegate, UITableViewDataSo
             }
             return cell
         }
-    func dateToString(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-        let myString = formatter.string(from: date) // string purpose I add here
-        let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM-yyyy"
-        let myStringafd = formatter.string(from: yourDate!)
-        return myStringafd
-    }
-    
 }

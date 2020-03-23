@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class AttendanceViewController: UIViewController {
-    var students: [NSManagedObject] = []
+    var students: [Student] = []
     @IBOutlet weak var attendanceTableView: UITableView!
     
     
@@ -33,7 +33,7 @@ class AttendanceViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
         do {
-          students = try managedContext.fetch(fetchRequest)
+            students = try managedContext.fetch(fetchRequest) as! [Student]
 //            for student in students {
 //                let mPayments = student.value(forKey: "payments") as! [Float]
 //            }

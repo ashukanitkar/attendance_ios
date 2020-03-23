@@ -52,7 +52,22 @@ class CoreDataManager {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
-    
+
+    func updateAttendance(for student: Student, date: Date) {
+        guard let managedContext = managedContext else {
+            return print("could not save, no managed context")
+        }
+        let existingDates = student.datesAttended ?? []
+        var updatedDates = existingDates
+        updatedDates.append(date)
+        student.datesAttended = updatedDates
+        do {
+        try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
     func save() {
         try? managedContext?.save()
     }
