@@ -16,23 +16,11 @@ class PaymentsViewController: UIViewController {
         super.viewDidLoad()
         studentTableView.delegate = self
         studentTableView.dataSource = self
-        fetchCoreData()
+        students = CoreDataManager.shared.students ?? []
     }
     override func viewWillAppear(_ animated: Bool) {
-        fetchCoreData()
+        students = CoreDataManager.shared.students ?? []
         studentTableView.reloadData()
-    }
-    func fetchCoreData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
-        do {
-            students = try managedContext.fetch(fetchRequest) as! [Student]
-        } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,7 +41,7 @@ extension PaymentsViewController: UITableViewDelegate, UITableViewDataSource {
         let student = students[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
         if let cell = cell as? StudentCell {
-            cell.name.text = student.value(forKey: "name") as? String
+            cell.name.text = student.name
         }
         return cell
     }

@@ -21,7 +21,7 @@ class AttendanceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = student?.value(forKey: "name") as? String
+        navigationItem.title = student?.name
         datePicker.maximumDate = Date()
         attendanceHistoryTable.delegate = self
         attendanceHistoryTable.dataSource = self
@@ -55,12 +55,10 @@ extension AttendanceDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "attendanceHistoryCell", for: indexPath)
-            if let student = student {
-                if let cell = cell as? AttendanceHistoryCell {
-                    let dates = student.value(forKey: "datesAttended") as? [Date]
-                    if let dates = dates {
-                        cell.dateLabel.text = dateToString(date: dates[indexPath.row])
-                    }
+            if let student = student, let cell = cell as? AttendanceHistoryCell {
+                let dates = student.datesAttended
+                if let dates = dates {
+                    cell.dateLabel.text = dateToString(date: dates[indexPath.row])
                 }
             }
             return cell

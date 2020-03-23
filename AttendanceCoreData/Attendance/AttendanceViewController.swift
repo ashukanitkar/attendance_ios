@@ -16,7 +16,7 @@ class AttendanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCoreData()
+        students = CoreDataManager.shared.students ?? []
         attendanceTableView.dataSource = self
         attendanceTableView.delegate = self
     }
@@ -26,42 +26,11 @@ class AttendanceViewController: UIViewController {
         attendanceTableView.reloadData()
     }
     
-    func fetchCoreData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
-        do {
-            students = try managedContext.fetch(fetchRequest) as! [Student]
-//            for student in students {
-//                let mPayments = student.value(forKey: "payments") as! [Float]
-//            }
-        } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let attendanceDetailVC = segue.destination as? AttendanceDetailViewController, let index = attendanceTableView.indexPathForSelectedRow?.row else {
             return
         }
         attendanceDetailVC.student = students[index]
-    }
-    
-    func saveAttendance(for student: NSObject) {
-        if var datesAttended = student.value(forKey: "datesAttended") as? [Date] {
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                datesAttended.append(Date())
-                student.setValue(datesAttended, forKey: "datesAttended")
-                let managedContext = appDelegate.persistentContainer.viewContext
-                do {
-                    try managedContext.save()
-                } catch let error as NSError {
-                  print("Could not save today's attendance. \(error), \(error.userInfo)")
-                }
-            }
-        }
     }
 }
 
@@ -74,7 +43,7 @@ extension AttendanceViewController: UITableViewDataSource, UITableViewDelegate {
         let student = students[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
         if let cell = cell as? StudentCell {
-            let name = student.value(forKey: "name") as? String
+            let name = student.name
             cell.name.text = name
         }
         return cell
@@ -83,8 +52,7 @@ extension AttendanceViewController: UITableViewDataSource, UITableViewDelegate {
      func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let contextItem = UIContextualAction(style: .normal, title: "Mark As Present") {  (action, view, completionHandler) in
             let student = self.students[indexPath.row]
-            print(student)
-            self.saveAttendance(for: student)
+            CoreDataManager.shared.updateAttendance(for: student, date: Date())
             completionHandler(true)
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])

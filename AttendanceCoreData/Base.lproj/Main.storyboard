@@ -324,14 +324,14 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cH0-Ho-lAb">
-                                <rect key="frame" x="20" y="243" width="374" height="75"/>
+                                <rect key="frame" x="20" y="244" width="374" height="72.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="JVh-2l-zEo"/>
                                     <constraint firstAttribute="width" constant="374" id="aPA-Qq-eQD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Save" backgroundImage="square.and.arrow.down.fill" catalog="system">
+                                <state key="normal" title="Save" backgroundImage="rectangle.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
@@ -404,6 +404,5 @@
         <image name="dollarsign.square.fill" catalog="system" width="64" height="56"/>
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
-        <image name="square.and.arrow.down.fill" catalog="system" width="60" height="64"/>
     </resources>
 </document>
