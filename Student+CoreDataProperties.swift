@@ -19,6 +19,6 @@ extension Student {
 
     @NSManaged public var datesAttended: [Date]?
     @NSManaged public var name: String?
-    @NSManaged public var payments: [Float]?
+    @NSManaged public var payments: [Int]?
 
 }

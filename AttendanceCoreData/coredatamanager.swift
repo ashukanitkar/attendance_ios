@@ -27,7 +27,7 @@ class CoreDataManager {
         }
         let student = Student(entity: studentEntity, insertInto: managedContext)
         student.datesAttended = [Date]()
-        student.payments = [Float]()
+        student.payments = [Int]()
         student.name = name
         students?.append(student)
         
@@ -38,7 +38,7 @@ class CoreDataManager {
             }
     }
     
-    func updatePayment(for student: Student, amount: Float) {
+    func updatePayment(for student: Student, amount: Int) {
         guard let managedContext = managedContext else {
             return print("could not save, no managed context")
         }

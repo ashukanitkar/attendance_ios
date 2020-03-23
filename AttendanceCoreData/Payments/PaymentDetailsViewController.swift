@@ -10,7 +10,6 @@ import UIKit
 
 class PaymentDetailsViewController: UIViewController {
     @IBOutlet weak var paymentAmountPicker: UIPickerView!
-    @IBOutlet weak var paymentAmount: UITextField!
     @IBOutlet weak var paymentHistoryTable: UITableView!
     var student: Student?
     let paymentAmounts: [Int] = [10, 15, 20, 25, 30, 35, 40]
@@ -29,13 +28,10 @@ class PaymentDetailsViewController: UIViewController {
     }
     
     @IBAction func savePayment(_ sender: Any) {
-        let paymentAmountText: String = paymentAmount.text!
-        let paymentAmountFloat = Float(paymentAmountText)
-         if let paymentAmountFloat = paymentAmountFloat, let student = student {
-            CoreDataManager.shared.updatePayment(for: student, amount: paymentAmountFloat)
+        let paymentAmount: Int = paymentAmounts[paymentAmountPicker.selectedRow(inComponent: 0)]
+         if let student = student {
+            CoreDataManager.shared.updatePayment(for: student, amount: paymentAmount)
         }
-        paymentAmount.text = ""
-        self.view.endEditing(true)
         paymentHistoryTable.reloadData()
     }
 }

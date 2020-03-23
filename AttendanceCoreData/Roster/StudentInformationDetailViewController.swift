@@ -16,13 +16,17 @@ class StudentInformationDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = getAmountOwed()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewDidLoad()
+    }
+    
     func getAmountOwed() -> String {
         let totalClasses = student?.datesAttended?.count ?? 0
         let costPerClass = 25
         let payments = student?.payments ?? []
         let totalAmountPaid = payments.reduce(0, +)
-        let amountOwed = Float(totalClasses*costPerClass) - totalAmountPaid
+        let amountOwed = (totalClasses*costPerClass) - totalAmountPaid
         return String(amountOwed)
     }
 }
