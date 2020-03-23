@@ -9,14 +9,17 @@
 import UIKit
 
 class PaymentDetailsViewController: UIViewController {
+    @IBOutlet weak var paymentAmountPicker: UIPickerView!
     @IBOutlet weak var paymentAmount: UITextField!
     @IBOutlet weak var paymentHistoryTable: UITableView!
     var student: Student?
-    
+    let paymentAmounts: [Int] = [10, 15, 20, 25, 30, 35, 40]
     override func viewDidLoad() {
         super.viewDidLoad()
         paymentHistoryTable.delegate = self
         paymentHistoryTable.dataSource = self
+        paymentAmountPicker.delegate = self
+        paymentAmountPicker.dataSource = self
         navigationItem.title = student?.name
     }
        
@@ -55,4 +58,20 @@ extension PaymentDetailsViewController: UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+}
+extension PaymentDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return paymentAmounts.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(paymentAmounts[row])
+    }
+    
+    
 }

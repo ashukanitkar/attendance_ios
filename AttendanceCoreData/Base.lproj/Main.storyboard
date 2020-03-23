@@ -37,6 +37,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="name" destination="DDb-PB-Gxh" id="viK-oF-kmx"/>
+                                            <segue destination="CRt-7I-Wk3" kind="show" identifier="segueToStudentDetail" id="oHI-U4-PJI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -65,6 +66,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1548" y="-474"/>
+        </scene>
+        <!--Student Information Detail View Controller-->
+        <scene sceneID="uh2-pn-b7z">
+            <objects>
+                <viewController id="CRt-7I-Wk3" customClass="StudentInformationDetailViewController" customModule="AttendanceCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7P5-7t-Qyn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="yxs-Nw-hVb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p5d-BJ-QAz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3K-Pn-bbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562" y="-480"/>
         </scene>
         <!--Students-->
         <scene sceneID="gtw-gg-ufH">
@@ -338,6 +355,10 @@
                                     <action selector="savePayment:" destination="c7p-yK-Bjz" eventType="touchUpInside" id="Vf3-wk-Qxr"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rT0-eU-Sg3">
+                                <rect key="frame" x="10" y="326" width="394" height="133"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -353,6 +374,7 @@
                     <navigationItem key="navigationItem" id="D3c-cg-EKC"/>
                     <connections>
                         <outlet property="paymentAmount" destination="MNr-Lx-tEr" id="MyW-Yu-O4K"/>
+                        <outlet property="paymentAmountPicker" destination="rT0-eU-Sg3" id="EVO-oV-Exx"/>
                         <outlet property="paymentHistoryTable" destination="qnR-N2-jNO" id="SmD-0w-5Wm"/>
                     </connections>
                 </viewController>

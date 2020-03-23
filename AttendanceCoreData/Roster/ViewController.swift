@@ -45,10 +45,14 @@ class ViewController: UIViewController {
       alert.addAction(cancelAction)
       present(alert, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let studentDetailVC = segue.destination as? StudentInformationDetailViewController, let index = studentTableView.indexPathForSelectedRow?.row else {
+            return
+        }
+        studentDetailVC.student = students[index]
+    }
 }
-
-//Student (datesAttended, name) , fetches ALLL objects that are stored as the "student" entity
-//I want to fetch an array of Date Entities that match a person 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
