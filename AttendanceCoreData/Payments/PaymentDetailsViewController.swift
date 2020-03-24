@@ -54,6 +54,10 @@ extension PaymentDetailsViewController: UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Payment History"
+    }
 }
 extension PaymentDetailsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     

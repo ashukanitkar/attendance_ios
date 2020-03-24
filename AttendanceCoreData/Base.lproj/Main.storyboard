@@ -17,7 +17,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GS9-87-GNw">
                                 <rect key="frame" x="0.0" y="88" width="414" height="788"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="AoG-cX-YMs" customClass="StudentCell" customModule="AttendanceCoreData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -35,6 +35,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="name" destination="DDb-PB-Gxh" id="viK-oF-kmx"/>
                                             <segue destination="CRt-7I-Wk3" kind="show" identifier="segueToStudentDetail" id="oHI-U4-PJI"/>
@@ -44,6 +45,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GS9-87-GNw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5RT-1z-N0T"/>
                             <constraint firstItem="GS9-87-GNw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DAc-3r-ufk"/>
@@ -54,6 +56,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Students" id="Qbx-q0-gBV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ami-Ac-T2g">
+                            <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addStudent:" destination="BYZ-38-t0r" id="6Eo-tx-Hym"/>
                             </connections>
@@ -112,7 +115,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C5u-uY-HLj">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="IZz-UA-qBN" customClass="StudentCell" customModule="AttendanceCoreData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -130,6 +133,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="name" destination="OEA-Pz-YJx" id="fXh-ie-pKs"/>
                                             <segue destination="hAD-Dk-c8G" kind="show" identifier="segueToStudentAttendance" id="82F-Ua-XO2"/>
@@ -138,7 +142,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C5u-uY-HLj" firstAttribute="bottom" secondItem="tk5-vB-g02" secondAttribute="bottom" id="5DH-8r-rVU"/>
                             <constraint firstItem="C5u-uY-HLj" firstAttribute="leading" secondItem="tk5-vB-g02" secondAttribute="leading" id="Dcx-4n-BZI"/>
@@ -201,7 +205,7 @@
                                     <constraint firstAttribute="height" constant="72.5" id="FwY-AV-lza"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save" backgroundImage="rectangle.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
@@ -210,7 +214,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wPE-b1-xQ1" firstAttribute="leading" secondItem="tHJ-gt-38F" secondAttribute="leading" id="DpJ-sO-myU"/>
                             <constraint firstItem="M6V-8M-uQf" firstAttribute="leading" secondItem="tHJ-gt-38F" secondAttribute="leading" constant="20" id="K8d-LO-eAj"/>
@@ -239,7 +243,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cmv-6w-KhW">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="VEf-L5-Y16" kind="relationship" relationship="viewControllers" id="m1x-Xp-MHu"/>
@@ -262,7 +265,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Go7-NW-YwJ">
                                 <rect key="frame" x="0.0" y="70" width="414" height="744"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" id="It3-8X-sJf" customClass="StudentCell" customModule="AttendanceCoreData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
@@ -280,6 +284,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="name" destination="J6v-q0-krW" id="7NA-PZ-I7i"/>
                                             <segue destination="c7p-yK-Bjz" kind="show" identifier="segueToStudentPayment" id="rZG-JD-bLV"/>
@@ -318,7 +323,7 @@
                                     <constraint firstAttribute="height" constant="64.5" id="8ME-ae-oSg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save" backgroundImage="rectangle.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
@@ -339,7 +344,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="seS-M7-Uun">
-                                                    <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
+                                                    <rect key="frame" x="20" y="0.0" width="381" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -354,7 +359,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cH0-Ho-lAb" firstAttribute="leading" secondItem="zBi-xm-oq3" secondAttribute="leading" constant="96" id="7es-aT-7GN"/>
                             <constraint firstItem="cH0-Ho-lAb" firstAttribute="top" secondItem="zBi-xm-oq3" secondAttribute="top" constant="211" id="I3f-bQ-Jq3"/>
@@ -417,4 +422,5 @@
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
+    <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

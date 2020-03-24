@@ -39,7 +39,7 @@ class AttendanceDetailViewController: UIViewController {
 
         let myString = formatter.string(from: date) // string purpose I add here
         let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MMM-yyyy"
+        formatter.dateFormat = "MM-dd-yyyy"
         let myStringafd = formatter.string(from: yourDate!)
         return myStringafd
     }
@@ -62,5 +62,9 @@ extension AttendanceDetailViewController: UITableViewDelegate, UITableViewDataSo
                 }
             }
             return cell
-        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Attendance History"
+    }
 }

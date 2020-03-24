@@ -17,6 +17,7 @@ class PaymentsViewController: UIViewController {
         studentTableView.delegate = self
         studentTableView.dataSource = self
         students = CoreDataManager.shared.students ?? []
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1764705882, blue: 0.3333333333, alpha: 1)]
     }
     override func viewWillAppear(_ animated: Bool) {
         students = CoreDataManager.shared.students ?? []

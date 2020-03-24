@@ -15,10 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetchCoreData()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1764705882, blue: 0.3333333333, alpha: 1)]
         students = CoreDataManager.shared.students ?? []
         studentTableView.delegate = self
         studentTableView.dataSource = self
+        tabBarController?.tabBar.tintColor = #colorLiteral(red: 1, green: 0.1764705882, blue: 0.3333333333, alpha: 1)
         // Do any additional setup after loading the view.
     }
     

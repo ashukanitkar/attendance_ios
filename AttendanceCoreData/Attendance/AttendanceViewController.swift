@@ -16,6 +16,7 @@ class AttendanceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1764705882, blue: 0.3333333333, alpha: 1)]
         students = CoreDataManager.shared.students ?? []
         attendanceTableView.dataSource = self
         attendanceTableView.delegate = self
