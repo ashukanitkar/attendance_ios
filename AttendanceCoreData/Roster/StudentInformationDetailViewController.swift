@@ -11,10 +11,14 @@ import Foundation
 
 class StudentInformationDetailViewController: UIViewController {
     var student: Student?
+    @IBOutlet weak var costPerClassLabel: UILabel!
+    @IBOutlet weak var amountDueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = getAmountOwed()
+        navigationItem.title = student?.name ?? ""
+        costPerClassLabel.text = "Cost Per Class: $" + String(student?.classCost ?? 0)
+        amountDueLabel.text = "Amount Due: $" + getAmountOwed()
     }
     
     override func viewWillAppear(_ animated: Bool) {

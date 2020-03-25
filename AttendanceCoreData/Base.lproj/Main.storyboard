@@ -77,14 +77,40 @@
                     <view key="view" contentMode="scaleToFill" id="7P5-7t-Qyn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEM-6q-eaG">
+                                <rect key="frame" x="50" y="241" width="315" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhx-O9-0RW">
+                                <rect key="frame" x="50" y="438" width="315" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93771028518676758" green="0.8589707612991333" blue="0.72909665107727051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yxs-Nw-hVb" firstAttribute="trailing" secondItem="nEM-6q-eaG" secondAttribute="trailing" constant="49" id="1F7-sf-In4"/>
+                            <constraint firstItem="dhx-O9-0RW" firstAttribute="leading" secondItem="yxs-Nw-hVb" secondAttribute="leading" constant="50" id="AYd-rm-66u"/>
+                            <constraint firstItem="nEM-6q-eaG" firstAttribute="leading" secondItem="yxs-Nw-hVb" secondAttribute="leading" constant="50" id="C59-Ap-98h"/>
+                            <constraint firstItem="nEM-6q-eaG" firstAttribute="top" secondItem="yxs-Nw-hVb" secondAttribute="top" constant="153" id="JOH-fl-ZhX"/>
+                            <constraint firstItem="dhx-O9-0RW" firstAttribute="top" secondItem="nEM-6q-eaG" secondAttribute="bottom" constant="176.5" id="Mla-xo-yHz"/>
+                            <constraint firstItem="yxs-Nw-hVb" firstAttribute="trailing" secondItem="dhx-O9-0RW" secondAttribute="trailing" constant="49" id="lsE-g4-hUr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yxs-Nw-hVb"/>
                     </view>
                     <navigationItem key="navigationItem" id="p5d-BJ-QAz"/>
+                    <connections>
+                        <outlet property="amountDueLabel" destination="dhx-O9-0RW" id="SFR-qh-wLG"/>
+                        <outlet property="costPerClassLabel" destination="nEM-6q-eaG" id="wLf-59-mMG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3K-Pn-bbo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2562" y="-480"/>
+            <point key="canvasLocation" x="2560.8695652173915" y="-480.13392857142856"/>
         </scene>
         <!--Students-->
         <scene sceneID="gtw-gg-ufH">
