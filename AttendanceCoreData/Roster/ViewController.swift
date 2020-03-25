@@ -29,22 +29,29 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addStudent(_ sender: Any) {
-      let alert = UIAlertController(title: "New Student", message: "Add a new name", preferredStyle: .alert)
-      let saveAction = UIAlertAction(title: "Save", style: .default) {
-        [unowned self] action in
-        guard let textField = alert.textFields?.first,
-          let nameToSave = textField.text else {
+        let alert = UIAlertController(title: "New Student", message: "", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) {
+            [unowned self] action in
+            guard let nameToSave = alert.textFields?.first?.text else {
             return
         }
-        CoreDataManager.shared.addStudent(name: nameToSave)
+        let costPerClass = alert.textFields?[1].text ?? "20"
+        CoreDataManager.shared.addStudent(name: nameToSave, cost: costPerClass)
         self.students = CoreDataManager.shared.students ?? []
         self.studentTableView.reloadData()
-      }
-      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-      alert.addTextField()
-      alert.addAction(saveAction)
-      alert.addAction(cancelAction)
-      present(alert, animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addTextField { (studentName) in
+            studentName.text = ""
+            studentName.placeholder = "Name"
+        }
+        alert.addTextField { (studentPrice) in
+            studentPrice.text = ""
+            studentPrice.placeholder = "20"
+        }
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

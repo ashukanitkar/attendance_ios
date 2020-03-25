@@ -23,10 +23,10 @@ class StudentInformationDetailViewController: UIViewController {
     
     func getAmountOwed() -> String {
         let totalClasses = student?.datesAttended?.count ?? 0
-        let costPerClass = 25
+        let costPerClass = student?.classCost ?? Int16(25)
         let payments = student?.payments ?? []
         let totalAmountPaid = payments.reduce(0, +)
-        let amountOwed = (totalClasses*costPerClass) - totalAmountPaid
+        let amountOwed = Int(totalClasses*Int(costPerClass)) - totalAmountPaid
         return String(amountOwed)
     }
 }

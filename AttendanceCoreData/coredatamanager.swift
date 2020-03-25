@@ -21,7 +21,7 @@ class CoreDataManager {
         students = try? managedContext?.fetch(fetchRequest)
     }
     
-    func addStudent(name: String) {
+    func addStudent(name: String, cost: String) {
         guard let managedContext = managedContext, let studentEntity = NSEntityDescription.entity(forEntityName: "Student", in: managedContext) else {
             return print("could not save, no managed context")
         }
@@ -29,6 +29,8 @@ class CoreDataManager {
         student.datesAttended = [Date]()
         student.payments = [Int]()
         student.name = name
+        let cost:Int16 = Int16(cost) ?? 20
+        student.classCost = cost
         students?.append(student)
         
         do {
